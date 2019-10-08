@@ -11,6 +11,11 @@ def test_clamp_inputs_to_1_if_below_0():
 
 	assert(problem.displayWithoutAnswer() == '1 + 1')
 
+def test_round_inputs():
+	problem = Problem(Add(), 0.1, 3.6)
+
+	assert(problem.displayWithoutAnswer() == '1 + 4')
+
 def test_return_false_if_answer_is_wrong():
 	problem = Problem(Add(), 2, 2)
 

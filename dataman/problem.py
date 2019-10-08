@@ -1,8 +1,8 @@
 class Problem:
 	def __init__(self, operation, lhs=1, rhs=1):
 		self._operation = operation
-		self._left = max(lhs, 1)
-		self._right = max(rhs, 1)
+		self._left = round(max(lhs, 1))
+		self._right = round(max(rhs, 1))
 
 	def solve(self):
 		return self._operation.perform(self._left, self._right)
