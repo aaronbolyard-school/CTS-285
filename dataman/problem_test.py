@@ -35,3 +35,15 @@ def test_display_with_answer_correctly():
 	problem = Problem(Add(), 2, 2)
 
 	assert(problem.displayWithAnswer() == '2 + 2 = 4')	
+
+def test_isSame_should_return_true_if_both_operations_are_same():
+	problem1 = Problem(Add(), 2, 2)
+	problem2 = Problem(Add(), 2, 2)
+
+	assert(problem1.isSame(problem2))
+
+def test_isSame_should_return_false_if_both_operations_are_not_same():
+	problem1 = Problem(Add(), 2, 2)
+	problem2 = Problem(Add(), 4, 0)
+
+	assert(not problem1.isSame(problem2))

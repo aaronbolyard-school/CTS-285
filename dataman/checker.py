@@ -20,7 +20,7 @@ def generate_problem(rangeMin=1, rangeMax=20):
 		c = a * b
 		return Problem(Divide(), c, min(a, b))
 
-def checker():
+def checker(app):
 	while True:
 		problem = generate_problem()
 
@@ -32,6 +32,11 @@ def checker():
 		else:
 			print('Incorrect!')
 			print(problem.displayWithAnswer())
+
+			if app:
+				message = 'Do you want to add this to the Memory Bank? [Y]es/[N]o: '
+				if get_should_continue(message):
+					app.memoryBank.add(problem)
 
 		if not get_should_continue():
 			break

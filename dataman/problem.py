@@ -4,6 +4,15 @@ class Problem:
 		self._left = round(max(lhs, 1))
 		self._right = round(max(rhs, 1))
 
+	def isSame(self, other):
+		if not isinstance(other._operation, type(self._operation)):
+			return False
+
+		if self._left != other._left or self._right != other._right:
+			return False
+
+		return True
+
 	def solve(self):
 		return self._operation.perform(self._left, self._right)
 
