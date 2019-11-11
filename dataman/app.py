@@ -1,5 +1,6 @@
 from memory_bank import MemoryBank, memory
 from checker import checker
+from guess import main as guesser
 from input import get_integer_from_user
 
 class App:
@@ -8,7 +9,8 @@ class App:
 
 OPTIONS = {
 	1: checker,
-	2: memory
+	2: memory,
+	3: guesser
 }
 
 def main():
@@ -22,6 +24,7 @@ def main():
 		print('0. Quit')
 		print('1. Answer Checker')
 		print('2. Memory Bank')
+		print('3. Number Guesser')
 
 		option = get_integer_from_user('> ')
 		operation = OPTIONS.get(option, None)
